@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using OdeToFood.Data;
 
 namespace OdeToFood
 {
@@ -24,6 +25,8 @@ namespace OdeToFood
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddRazorPages();
+
+      services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
